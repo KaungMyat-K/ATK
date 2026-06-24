@@ -21,3 +21,18 @@ body {
     scrollbar-width: none;
   }
 }
+
+.myanmar-content {
+  font-family: "Your-Myanmar-Font", sans-serif;
+}
+
+.myanmar-content h1,
+.myanmar-content h2,
+.myanmar-content h3 {
+  line-height: 1.5;
+}
+
+.myanmar-content p,
+.myanmar-content li {
+  line-height: 2;
+}

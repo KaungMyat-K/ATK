@@ -1,10 +1,14 @@
 "use client";
 
-import { homeData } from "@/constants/home-data";
+import { ContactPageData } from "@/constants/contact-data";
+import { HomeSectionData } from "@/constants/home-data";
 
-export default function Contact() {
-  const { contact } = homeData;
+interface ContactProps {
+  contact: HomeSectionData["contact"];
+  form: ContactPageData["form"];
+}
 
+export default function Contact({ contact, form }: ContactProps) {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-secondary/10 to-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,30 +63,30 @@ export default function Contact() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder={form.placeholders.name}
                   className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition bg-transparent"
                 />
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder={form.placeholders.email}
                   className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition bg-transparent"
                 />
               </div>
               <input
                 type="text"
-                placeholder="Subject"
+                placeholder={form.placeholders.subject}
                 className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition bg-transparent"
               />
               <textarea
                 rows={4}
-                placeholder="Message"
+                placeholder={form.placeholders.message}
                 className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition resize-none bg-transparent"
               ></textarea>
               <button
                 type="submit"
                 className="w-full bg-secondary text-white py-3 rounded-full font-semibold hover:bg-opacity-90 transition shadow-md"
               >
-                Send Message
+                {form.submitButton}
               </button>
             </form>
           </div>

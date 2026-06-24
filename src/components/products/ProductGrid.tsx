@@ -1,13 +1,17 @@
-import { productsData } from "@/constants/products-data";
+import { ProductsPageData } from "@/constants/products-data";
 import Image from "next/image";
 
-export default function ProductGrid() {
+interface ProductsDataProps {
+  productsData: ProductsPageData["items"];
+}
+
+export default function ProductGrid({ productsData }: ProductsDataProps) {
   return (
     <section className="py-8 sm:py-10 md:py-12 lg:py-16 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Products Grid (100% Dynamic) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
-          {productsData.items.map((product) => (
+          {productsData.map((product) => (
             <div
               key={product.id}
               className="bg-secondary/30 rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 group flex flex-col h-full"

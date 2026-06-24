@@ -3,12 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { navLinks } from "@/constants/navigation";
+import { navData } from "@/constants/navigation";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const { lang, setLang } = useLanguage();
+  const currentNavData = navData[lang];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -30,17 +33,17 @@ export default function Navbar() {
             />
             <div>
               <h1 className="text-lg md:text-xl font-bold tracking-tight text-secondary">
-                <span>Aung Takhon</span>
+                <span>{currentNavData.title}</span>
               </h1>
               <p className="text-[10px] md:text-xs text-gray-600 -mt-0.5 font-medium">
-                Paddy & Black Gram Wholesale Center
+                {currentNavData.subtitle}
               </p>
             </div>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => {
+            {currentNavData.links.map((link) => {
               const isContact = link.href === "/contact";
               const isActive = pathname === link.href;
 
@@ -70,6 +73,46 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            <button
+              onClick={() => setLang(lang === "en" ? "mm" : "en")}
+              className="flex items-center gap-2 "
+            >
+              <div className="relative w-14 h-7 bg-secondary rounded-full transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-between px-2 text-[11px] font-bold">
+                  <span
+                    className={`${
+                      lang === "en" ? "text-secondary" : "text-primary"
+                    } transition-colors duration-300`}
+                  >
+                    EN
+                  </span>
+                  <span
+                    className={`${
+                      lang === "mm" ? "text-secondary" : "text-primary"
+                    } transition-colors duration-300 `}
+                  >
+                    MM
+                  </span>
+                </div>
+
+                <div
+                  className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-lg transition-all duration-300 flex items-center justify-center ${
+                    lang === "en" ? "left-0.5" : "left-[30px]"
+                  }`}
+                >
+                  <img
+                    src={
+                      lang === "en"
+                        ? "https://flagcdn.com/w40/gb.png"
+                        : "https://flagcdn.com/w40/mm.png"
+                    }
+                    alt={lang === "en" ? "UK" : "Myanmar"}
+                    className="w-5 h-5 rounded-full object-cover"
+                  />
+                </div>
+              </div>
+            </button>
           </div>
 
           {/* Hamburger Button */}
@@ -103,7 +146,7 @@ export default function Navbar() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        {navLinks.map((link) => (
+        {currentNavData.links.map((link) => (
           <Link
             key={link.name}
             href={link.href}

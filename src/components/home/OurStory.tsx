@@ -1,8 +1,10 @@
-import { homeData } from "@/constants/home-data";
+import { HomeSectionData } from "@/constants/home-data";
 
-export default function OurStory() {
-  const { story } = homeData;
+interface ContactProps {
+  story: HomeSectionData["story"];
+}
 
+export default function OurStory({ story }: ContactProps) {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

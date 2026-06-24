@@ -1,11 +1,14 @@
 "use client";
 
-import { homeData } from "@/constants/home-data";
+import { HomeSectionData } from "@/constants/home-data";
 import Image from "next/image";
 
-export default function MissionVision() {
-  const { mission, vision } = homeData;
+interface MissionProps {
+  mission: HomeSectionData["mission"];
+  vision: HomeSectionData["vision"];
+}
 
+export default function MissionVision({ mission, vision }: MissionProps) {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-secondary/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

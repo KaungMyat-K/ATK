@@ -5,9 +5,10 @@ import { useContactForm } from "@/hooks/useContactForm";
 
 interface ContactInfoProps {
   info: ContactPageData["info"];
+  form: ContactPageData["form"];
 }
 
-export default function ContactForm({ info }: ContactInfoProps) {
+export default function ContactForm({ info, form }: ContactInfoProps) {
   const { formData, handleChange, handleSubmit } = useContactForm();
 
   return (
@@ -19,7 +20,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
             <div className="bg-gray-100 rounded-2xl md:rounded-l-2xl md:rounded-r-none shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 border border-gray-100 w-full">
               <div className="mb-6 sm:mb-8 md:mb-10">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800">
-                  Get in touch
+                  {info.title1}
                 </h3>
                 <div className="w-16 h-0.5 bg-secondary mt-3 sm:mt-4"></div>
               </div>
@@ -82,14 +83,14 @@ export default function ContactForm({ info }: ContactInfoProps) {
 
                 <div className="pt-4 sm:pt-5 md:pt-6">
                   <p className="text-gray-600 text-sm sm:text-base mb-3 sm:mb-4">
-                    Follow us
+                    {info.title2}
                   </p>
                   <div className="flex gap-3 sm:gap-4">
                     <a
                       href={info.facebookUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-secondary hover:text-[#1877F2] transition"
+                      className="text-secondary  hover:text-secondary hover:scale-110 transition-all duration-300"
                     >
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6"
@@ -117,7 +118,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     htmlFor="name"
                     className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
                   >
-                    Your Name
+                    {form.labels.name}
                   </label>
                   <input
                     value={formData.name}
@@ -127,7 +128,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     name="name"
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 text-sm sm:text-base"
-                    placeholder="Enter your name"
+                    placeholder={form.placeholders.name}
                   />
                 </div>
 
@@ -136,7 +137,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     htmlFor="email"
                     className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
                   >
-                    Email Address
+                    {form.labels.email}
                   </label>
                   <input
                     value={formData.email}
@@ -146,7 +147,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     name="email"
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 text-sm sm:text-base"
-                    placeholder="Enter your email"
+                    placeholder={form.placeholders.email}
                   />
                 </div>
 
@@ -155,7 +156,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     htmlFor="subject"
                     className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
                   >
-                    Subject
+                    {form.labels.subject}
                   </label>
                   <input
                     value={formData.subject}
@@ -165,7 +166,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     name="subject"
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 text-sm sm:text-base"
-                    placeholder="Enter subject"
+                    placeholder={form.placeholders.subject}
                   />
                 </div>
 
@@ -174,7 +175,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     htmlFor="message"
                     className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
                   >
-                    Message
+                    {form.labels.message}
                   </label>
                   <textarea
                     value={formData.message}
@@ -184,7 +185,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     rows={6}
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 resize-y text-sm sm:text-base"
-                    placeholder="Write your message here..."
+                    placeholder={form.placeholders.message}
                   ></textarea>
                 </div>
 
@@ -193,7 +194,7 @@ export default function ContactForm({ info }: ContactInfoProps) {
                     type="submit"
                     className="w-full sm:w-auto bg-primary text-secondary py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 rounded-full font-semibold hover:bg-opacity-90 transition duration-200 text-sm sm:text-base"
                   >
-                    Send Message
+                    {form.submitButton}
                   </button>
                 </div>
               </form>

@@ -1,8 +1,11 @@
-import { productsData } from "@/constants/products-data";
+import { ProductsPageData } from "@/constants/products-data";
 import Image from "next/image";
 
-export default function Hero() {
-  const { hero } = productsData;
+interface ProductsHeroProps {
+  hero: ProductsPageData["hero"];
+}
+
+export default function Hero({ hero }: ProductsHeroProps) {
   return (
     <section className="relative min-h-[30vh] sm:min-h-[35vh] md:min-h-[40vh] lg:min-h-[45vh] flex items-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
       {/* Background Image Container (Next.js Optimized Image) */}

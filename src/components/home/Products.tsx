@@ -1,15 +1,21 @@
 "use client";
 
-import { homeData } from "@/constants/home-data";
-import { productsData } from "@/constants/products-data";
+import { HomeSectionData } from "@/constants/home-data";
+import { navData } from "@/constants/navigation";
+import { ProductsPageData } from "@/constants/products-data";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-export default function Products() {
-  const { products } = homeData;
-  const featuredProducts = productsData.items.slice(0, 3);
+interface ProductsProps {
+  products: HomeSectionData["products"];
+  featuredProducts: ProductsPageData["items"];
+}
 
+export default function Products({
+  products,
+  featuredProducts,
+}: ProductsProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
 
@@ -25,7 +31,6 @@ export default function Products() {
       const gap = 16;
       const index = Math.round(scrollLeft / (cardWidth + gap));
 
-      // Dots Ref ထဲက data-dot ပါတဲ့ element တွေကို ရှာခြင်း
       if (dotsRef.current) {
         const dots = dotsRef.current.querySelectorAll("[data-dot]");
         dots.forEach((dot, i) => {
@@ -118,7 +123,7 @@ export default function Products() {
             {/* See More Products Button */}
             <div className="text-center mt-6">
               <Link
-                href="/product"
+                href={navData.en.links[1].href}
                 className="inline-block bg-secondary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-opacity-90 transition duration-200 shadow-md text-sm"
               >
                 See More Products
@@ -167,7 +172,7 @@ export default function Products() {
                 {products.description}
               </p>
               <Link
-                href="/product"
+                href={navData.en.links[1].href}
                 className="inline-block bg-secondary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-opacity-90 transition duration-200 shadow-md text-sm"
               >
                 See More Products
