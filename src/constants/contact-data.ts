@@ -32,13 +32,13 @@ export interface ContactPageData {
     labels: {
       name: string;
       email: string;
-      subject: string;
+      phone: string;
       message: string;
     };
     placeholders: {
       name: string;
       email: string;
-      subject: string;
+      phone: string;
       message: string;
     };
     submitButton: string;
@@ -86,13 +86,13 @@ export const contactData: { en: ContactPageData; mm: ContactPageData } = {
       labels: {
         name: "Your Name",
         email: "Email Address",
-        subject: "Subject",
+        phone: "Phone",
         message: "Message",
       },
       placeholders: {
         name: "Enter your name",
         email: "Enter your email",
-        subject: "Enter subject",
+        phone: "Enter Phone number",
         message: "Write your message here...",
       },
       submitButton: "Send Message",
@@ -127,13 +127,13 @@ export const contactData: { en: ContactPageData; mm: ContactPageData } = {
       labels: {
         name: "အမည်",
         email: "အီးမေးလ် လိပ်စာ",
-        subject: "အကြောင်းအရာ",
+        phone: "ဖုန်းနံပါတ်",
         message: "ပေးပို့လိုသော မက်ဆေ့ခ်ျ",
       },
       placeholders: {
         name: "သင့်အမည်ကို ရိုက်ထည့်ပါ",
         email: "သင့်အီးမေးလ်ကို ရိုက်ထည့်ပါ",
-        subject: "မေးမြန်းလိုသည့် အကြောင်းအရာ ခေါင်းစဉ်",
+        phone: "သင့်ဖုန်းနံပါတ်ကို ရိုက်ထည့်ပါ",
         message: "ဤနေရာတွင် အသေးစိတ် ရေးသားနိုင်ပါသည်...",
       },
       submitButton: "မက်ဆေ့ခ်ျ ပို့ရန်",

@@ -74,12 +74,13 @@ export default function Navbar() {
               );
             })}
 
+            {/* Language Toggle - Desktop */}
             <button
               onClick={() => setLang(lang === "en" ? "mm" : "en")}
-              className="flex items-center gap-2 "
+              className="flex items-center gap-2"
             >
               <div className="relative w-14 h-7 bg-secondary rounded-full transition-all duration-300 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-between px-2 text-[11px] font-bold">
+                <div className="absolute inset-0 flex items-center justify-between px-2 text-[11px] font-bold mt-1">
                   <span
                     className={`${
                       lang === "en" ? "text-secondary" : "text-primary"
@@ -90,7 +91,7 @@ export default function Navbar() {
                   <span
                     className={`${
                       lang === "mm" ? "text-secondary" : "text-primary"
-                    } transition-colors duration-300 `}
+                    } transition-colors duration-300`}
                   >
                     MM
                   </span>
@@ -115,28 +116,72 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Hamburger Button */}
-          <button
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-            className="md:hidden flex flex-col items-center justify-center w-10 h-10 space-y-1.5 focus:outline-none"
-          >
-            <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-                isOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            ></span>
-            <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            ></span>
-            <span
-              className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-                isOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            ></span>
-          </button>
+          {/* Right side - Language Toggle + Hamburger for mobile/tablet */}
+          <div className="flex items-center gap-3 md:hidden">
+            {/* Language Toggle - Mobile/Tablet */}
+            <button
+              onClick={() => setLang(lang === "en" ? "mm" : "en")}
+              className="flex items-center gap-2"
+            >
+              <div className="relative w-12 h-6 bg-secondary rounded-full transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-between px-1.5 text-[10px] font-bold mt-0.5">
+                  <span
+                    className={`${
+                      lang === "en" ? "text-secondary" : "text-primary"
+                    } transition-colors duration-300`}
+                  >
+                    EN
+                  </span>
+                  <span
+                    className={`${
+                      lang === "mm" ? "text-secondary" : "text-primary"
+                    } transition-colors duration-300`}
+                  >
+                    MM
+                  </span>
+                </div>
+
+                <div
+                  className={`absolute top-0.5 w-5 h-5 rounded-full bg-white shadow-lg transition-all duration-300 flex items-center justify-center ${
+                    lang === "en" ? "left-0.5" : "left-[26px]"
+                  }`}
+                >
+                  <img
+                    src={
+                      lang === "en"
+                        ? "https://flagcdn.com/w40/gb.png"
+                        : "https://flagcdn.com/w40/mm.png"
+                    }
+                    alt={lang === "en" ? "UK" : "Myanmar"}
+                    className="w-4 h-4 rounded-full object-cover"
+                  />
+                </div>
+              </div>
+            </button>
+
+            {/* Hamburger Button */}
+            <button
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+              className="flex flex-col items-center justify-center w-10 h-10 space-y-1.5 focus:outline-none"
+            >
+              <span
+                className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
+                  isOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
+              ></span>
+              <span
+                className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
+                  isOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              ></span>
+            </button>
+          </div>
         </div>
       </div>
 

@@ -2,6 +2,7 @@
 
 import { ContactPageData } from "@/constants/contact-data";
 import { HomeSectionData } from "@/constants/home-data";
+import { useContactForm } from "@/hooks/useContactForm";
 
 interface ContactProps {
   contact: HomeSectionData["contact"];
@@ -9,6 +10,9 @@ interface ContactProps {
 }
 
 export default function Contact({ contact, form }: ContactProps) {
+  const { formData, loading, status, handleChange, handleSubmit } =
+    useContactForm();
+
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-secondary/10 to-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,25 +63,37 @@ export default function Contact({ contact, form }: ContactProps) {
           </div>
 
           <div className="p-6 md:p-8">
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <input
+                  value={formData.name}
+                  onChange={handleChange}
+                  name="name"
                   type="text"
                   placeholder={form.placeholders.name}
                   className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition bg-transparent"
                 />
                 <input
-                  type="email"
-                  placeholder={form.placeholders.email}
+                  value={formData.phone}
+                  onChange={handleChange}
+                  name="phone"
+                  type="text"
+                  placeholder={form.placeholders.phone}
                   className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition bg-transparent"
                 />
               </div>
               <input
-                type="text"
-                placeholder={form.placeholders.subject}
+                value={formData.email}
+                onChange={handleChange}
+                name="email"
+                type="email"
+                placeholder={form.placeholders.email}
                 className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition bg-transparent"
               />
               <textarea
+                value={formData.message}
+                onChange={handleChange}
+                name="message"
                 rows={4}
                 placeholder={form.placeholders.message}
                 className="w-full px-4 py-3 border-b-2 border-gray-200 focus:border-secondary outline-none transition resize-none bg-transparent"

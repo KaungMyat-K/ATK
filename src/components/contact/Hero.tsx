@@ -11,7 +11,7 @@ export default function Hero({ hero }: ContactHeroProps) {
         <div className="text-center">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">
             {hero.title}{" "}
-            <span className="text-secondary">{hero.titleAccent}</span>
+            <span className="text-primary">{hero.titleAccent}</span>
           </h1>
           <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-secondary mx-auto"></div>
           <p className="text-gray-600 mt-2 sm:mt-3 md:mt-4 max-w-xl sm:max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg">

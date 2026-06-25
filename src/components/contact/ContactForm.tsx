@@ -9,7 +9,8 @@ interface ContactInfoProps {
 }
 
 export default function ContactForm({ info, form }: ContactInfoProps) {
-  const { formData, handleChange, handleSubmit } = useContactForm();
+  const { formData, loading, status, handleChange, handleSubmit } =
+    useContactForm();
 
   return (
     <section className="bg-primary pb-12 sm:pb-16 md:pb-20">
@@ -134,6 +135,25 @@ export default function ContactForm({ info, form }: ContactInfoProps) {
 
                 <div>
                   <label
+                    htmlFor="subject"
+                    className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
+                  >
+                    {form.labels.phone}
+                  </label>
+                  <input
+                    value={formData.phone}
+                    onChange={handleChange}
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 text-sm sm:text-base"
+                    placeholder={form.placeholders.phone}
+                  />
+                </div>
+
+                <div>
+                  <label
                     htmlFor="email"
                     className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
                   >
@@ -148,25 +168,6 @@ export default function ContactForm({ info, form }: ContactInfoProps) {
                     required
                     className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 text-sm sm:text-base"
                     placeholder={form.placeholders.email}
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-primary font-medium mb-1 sm:mb-2 text-xs sm:text-sm"
-                  >
-                    {form.labels.subject}
-                  </label>
-                  <input
-                    value={formData.subject}
-                    onChange={handleChange}
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-2.5 md:py-3 bg-primary border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-200 text-sm sm:text-base"
-                    placeholder={form.placeholders.subject}
                   />
                 </div>
 

@@ -27,7 +27,7 @@ export default function Hero({ hero }: ProductsHeroProps) {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             {hero.title}{" "}
-            <span className="text-secondary">{hero.titleAccent}</span>
+            <span className="text-primary">{hero.titleAccent}</span>
           </h1>
           <div className="w-16 sm:w-20 md:w-24 h-1 bg-secondary mx-auto"></div>
           <p className="text-gray-200 mt-3 sm:mt-4 max-w-[90%] sm:max-w-2xl mx-auto text-sm sm:text-base">
