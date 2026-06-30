@@ -30,12 +30,12 @@ export default function ProductGrid({ productsData }: ProductsDataProps) {
 
               {/* Product Info */}
               <div className="p-4 sm:p-5 md:p-6 flex flex-col flex-grow">
-                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-1 sm:mb-2">
+                <h3 className=" sm:text-lg md:text-xl font-bold text-gray-800 mb-1 sm:mb-2 line-clamp-2">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-2 sm:mb-3 flex-grow">
+                {/* <p className="text-gray-600 text-xs sm:text-sm md:text-md mb-2 sm:mb-3 flex-grow">
                   {product.description}
-                </p>
+                </p> */}
               </div>
             </div>
           ))}

@@ -10,12 +10,6 @@ export default function Map({ map }: ContactMapProps) {
       <div className="flex flex-col md:flex-row gap-6 md:gap-8">
         <div className="md:w-1/2 flex items-center order-1 md:order-2">
           <div className="bg-white p-6 sm:p-8 w-full rounded-2xl md:rounded-l-2xl md:rounded-r-none">
-            <div className="inline-block bg-secondary/10 px-3 py-1 rounded-full mb-3">
-              <span className="text-secondary text-xs font-semibold tracking-widest uppercase">
-                {map.title1}
-              </span>
-            </div>
-
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
               {map.title2}
             </h3>
@@ -34,9 +28,8 @@ export default function Map({ map }: ContactMapProps) {
                 </svg>
                 <div>
                   <p className="font-medium text-gray-800 text-sm">
-                    {map.addressLine1}
+                    {map.addressLine1}, {map.addressLine2}
                   </p>
-                  <p className="text-gray-500 text-sm">{map.addressLine2}</p>
                 </div>
               </div>
 

@@ -80,14 +80,14 @@ export default function Products({
           {/* Snap Scroll Container */}
           <div className="relative">
             <div
-              ref={scrollContainerRef} // id="scrollContainer" အစား ref ကို ချိတ်ပေးလိုက်ပါတယ်
+              ref={scrollContainerRef}
               className="overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth flex gap-4 class-hide-scrollbar"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {featuredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="w-[calc(100vw-2rem)] flex-shrink-0 snap-start bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                  className="w-[calc(100vw-2.5rem)] sm:w-[calc(50vw-2rem)] md:w-[calc(33.333vw-2rem)] flex-shrink-0 snap-start bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="relative h-64 w-full">
                     <Image
@@ -101,7 +101,7 @@ export default function Products({
                     <h3 className="text-xl font-bold text-gray-800 mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm line-clamp-2">
                       {product.description}
                     </p>
                   </div>
@@ -110,7 +110,10 @@ export default function Products({
             </div>
 
             {/* 3 Dots Indicator */}
-            <div ref={dotsRef} className="flex justify-center gap-2 mt-4">
+            <div
+              ref={dotsRef}
+              className="flex justify-center gap-2 mt-4 block sm:hidden"
+            >
               {featuredProducts.map((_, index) => (
                 <div
                   key={index}
@@ -153,7 +156,7 @@ export default function Products({
                     <h3 className="text-xl font-bold text-gray-800 mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm line-clamp-2">
                       {product.description}
                     </p>
                   </div>

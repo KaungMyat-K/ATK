@@ -6,7 +6,7 @@ interface AboutHeroProps {
 
 export default function Hero({ hero }: AboutHeroProps) {
   return (
-    <section className="relative min-h-[30vh] sm:min-h-[35vh] md:min-h-[40vh] lg:min-h-[45vh] flex items-center">
+    <section className="relative min-h-[30vh] sm:min-h-[35vh] md:min-h-[20vh] lg:min-h-[25vh] xl:min-h-[45vh] flex items-center mb-8 sm:mb-12 md:mb-8 lg:mb-20">
       <div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('${hero.bgImage}')` }}

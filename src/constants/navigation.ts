@@ -41,7 +41,7 @@ export const navData: { en: NavLabels; mm: NavLabels } = {
     },
   },
   mm: {
-    title: "အောင်သပြေ",
+    title: "အောင်တံခွန်",
     subtitle: "စပါးနှင့် မတ်ပဲ လက္ကားဗဟိုဌာန",
     links: [
       { name: "ပင်မစာမျက်နှာ", href: "/" },

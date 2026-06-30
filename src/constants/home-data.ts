@@ -1,3 +1,5 @@
+import { contactData } from "./contact-data";
+
 export interface HomeSectionData {
   hero: {
     titleAccent: string;
@@ -35,8 +37,10 @@ export interface HomeSectionData {
     titleAccent: string;
     description: string;
     email: string;
-    phone: string;
-    address: string;
+    phone1: string;
+    phone2: string;
+    address1: string;
+    address2: string;
   };
 }
 
@@ -54,9 +58,9 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       titleBlock: "Supplier of",
       titleAccent: "Agricultural Products",
       paragraphs: [
-        "At Aung Takhon, we are committed to delivering high-quality rice, beans, pulses, and a wide range of agricultural products across Myanmar. With a strong focus on quality, reliability, and customer satisfaction, we connect farmers, businesses, and consumers through a trusted supply network.",
-        "Our mission is to support Myanmar's agricultural sector by sourcing premium products from local growers and ensuring they reach customers in excellent condition. We take pride in maintaining high standards throughout procurement, processing, and distribution.",
-        "Driven by integrity and a passion for excellence, Aung Takhon continues to build long-term relationships with farmers, partners, and customers while contributing to the growth and sustainability of Myanmar's agricultural industry.",
+        "Aung Tha Khon is a trusted agricultural trading company in Myanmar, specializing in rice, beans, pulses, and other agricultural products.",
+        "We are committed to providing high-quality products, fair pricing, and reliable service while building long-term partnerships with farmers, suppliers, and customers.",
+        "Our mission is to support the growth of Myanmar's agricultural sector through integrity, professionalism, and customer satisfaction.",
       ],
     },
     products: {
@@ -70,7 +74,7 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       title: "What Drives",
       titleAccent: "Us",
       description:
-        "We are committed to delivering high-quality agricultural products with honesty, reliability, and care. Our mission is to: Ensure customer satisfaction through trust and quality, Support farmers with guidance, resources, and fair partnerships, Strengthen the agricultural supply chain in Myanmar, Expand opportunities in both local and international markets, Contribute to better livelihoods and sustainable farming growth.",
+        "We are committed to ensuring customer satisfaction through trust and quality while supporting farmers with expert guidance, valuable resources, and fair partnerships. By strengthening Myanmar's agricultural supply chain, we aim to create greater opportunities in both local and international markets, contributing to improved livelihoods and the sustainable growth of the agricultural sector.",
       image: "/images/home/rice.png",
     },
     vision: {
@@ -78,7 +82,7 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       title: "Where We're",
       titleAccent: "Heading",
       description:
-        "To become a leading contributor to global food security by positioning Myanmar as a trusted source of high-quality rice, beans, pulses, and essential agricultural products, while improving the lives of farming communities. We envision a future where our commitment to quality, sustainability, and customer satisfaction drives positive change across Myanmar's agricultural landscape.",
+        "To become a leading contributor to global food security by positioning Myanmar as a trusted source of high-quality rice, beans, pulses, and essential agricultural products, while improving the lives of farming communities.",
       image: "/images/home/black_matpae.png",
     },
     contact: {
@@ -87,8 +91,10 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       description:
         "Whether you have a question about our products, pricing, or anything else, our team is ready to answer all your questions.",
       email: "aungtakhon@gmail.com",
-      phone: "+95 9 123 456 789",
-      address: "Yangon, Myanmar",
+      phone1: contactData.en.info.phone1,
+      phone2: contactData.en.info.phone2,
+      address1: "No. 42, Shwe Bon Thar Street",
+      address2: "Yangon, Myanmar",
     },
   },
   mm: {
@@ -104,9 +110,9 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       titleBlock: "စိုက်ပျိုးရေးထုတ်ကုန်",
       titleAccent: "ဖြန့်ချိရေးလုပ်ငန်း",
       paragraphs: [
-        "အောင်သပြေ (Aung Takhon) တွင် ကျွန်ုပ်တို့သည် အရည်အသွေးမြင့် ဆန်၊ ပဲမျိုးစုံနှင့် အခြားသော စိုက်ပျိုးရေးထုတ်ကုန်များကို မြန်မာနိုင်ငံတစ်ဝှမ်းလုံးသို့ စနစ်တကျ ဖြန့်ချိပေးနေပါသည်။ အရည်အသွေး၊ ယုံကြည်စိတ်ချရမှုနှင့် သုံးစွဲသူ စိတ်ကျေနပ်မှုတို့ကို အဓိကထားပြီး တောင်သူများ၊ စီးပွားရေးလုပ်ငန်းများနှင့် စားသုံးသူများကို ခိုင်မာသော ကွန်ရက်ဖြင့် ချိတ်ဆက်ပေးနေပါသည်။",
-        "ကျွန်ုပ်တို့၏ ရည်မှန်းချက်မှာ ဒေသခံတောင်သူများထံမှ အဆင့်မြင့် ထုတ်ကုန်များကို ဝယ်ယူပြီး သုံးစွဲသူများထံသို့ အကောင်းဆုံး အခြေအနေဖြင့် ရောက်ရှိစေရန် ဖြစ်ပြီး မြန်မာ့စိုက်ပျိုးရေးကဏ္ဍကို ပံ့ပိုးကူညီပေးရန် ဖြစ်ပါသည်။ ထုတ်ကုန်များကို ဝယ်ယူခြင်း၊ ပြုပြင်ခြင်းနှင့် ဖြန့်ဖြူးခြင်း လုပ်ငန်းစဉ်တစ်လျှောက်လုံးတွင် မြင့်မားသော စံချိန်စံညွှန်းများကို ထိန်းသိမ်းထားပါသည်။",
-        "ရိုးသားဖြောင့်မတ်မှုနှင့် ထူးချွန်လိုသော စိတ်ဓာတ်ကို အခြေခံပြီး၊ အောင်သပြေသည် တောင်သူလယ်သမားများ၊ မိတ်ဖက်များနှင့် သုံးစွဲသူများနှင့် ရေရှည်ခိုင်မာသော ဆက်ဆံရေးကို တည်ဆောက်ကာ မြန်မာ့စိုက်ပျိုးရေးလုပ်ငန်း ရေရှည်ဖွံ့ဖြိုးတိုးတက်စေရန် ပါဝင်ဆောင်ရွက်နေပါသည်။",
+        "အောင်တံခွန် (Aung Takhon) သည် မြန်မာနိုင်ငံ၏ ယုံကြည်စိတ်ချရသော စိုက်ပျိုးရေးထွက်ကုန် ရောင်းဝယ်ရေးကုမ္ပဏီတစ်ခုဖြစ်ပြီး ဆန်၊ ပဲမျိုးစုံနှင့် အခြားစိုက်ပျိုးရေးထွက်ကုန်များကို အရည်အသွေးမြင့်စွာ ဖြန့်ဖြူးရောင်းချလျက်ရှိပါသည်။",
+        "အရည်အသွေးကောင်းမွန်သော ထုတ်ကုန်များ၊ သင့်တင့်မျှတသောဈေးနှုန်းများနှင့် ယုံကြည်စိတ်ချရသော ဝန်ဆောင်မှုများကို ပေးအပ်ကာ တောင်သူလယ်သမားများ၊ ပေးသွင်းသူများနှင့် ဖောက်သည်များနှင့် ရေရှည်လက်တွဲဆောင်ရွက်နိုင်သော မိတ်ဖက်ဆက်ဆံရေးကို တည်ဆောက်ရန် ရည်ရွယ်ပါသည်။",
+        "ကျွန်ုပ်တိုသည် ရိုးသားမှု၊ ကျွမ်းကျင်မှုနှင့် ဖောက်သည်စိတ်ကျေနပ်မှုကို အခြေခံ၍ မြန်မာ့စိုက်ပျိုးရေးကဏ္ဍ ဖွံဖြိုးတိုးတက်ရေးကို အားပေးကူညီလျက်ရှိပါသည်။",
       ],
     },
     products: {
@@ -120,7 +126,7 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       title: "ဘယ်အရာက ကျွန်ုပ်တို့ကို",
       titleAccent: "တွန်းအားပေးနေသလဲ",
       description:
-        "ကျွန်ုပ်တို့သည် ရိုးသားမှု၊ ယုံကြည်စိတ်ချရမှုနှင့် ဂရုစိုက်မှုတို့ဖြင့် အရည်အသွေးမြင့် စိုက်ပျိုးရေးထုတ်ကုန်များကို ပေးပို့ရန် သန္နိဋ္ဌာန်ချထားပါသည်။ ကျွန်ုပ်တို့၏ ရည်မှန်းချက်များမှာ- ယုံကြည်မှုနှင့် အရည်အသွေးဖြင့် သုံးစွဲသူ စိတ်ကျေနပ်မှု ရရှိစေရန်၊ နည်းလမ်းကောင်းများ၊ အရင်းအမြစ်များနှင့် မျှတသော မိတ်ဖက်ပြုမှုများဖြင့် တောင်သူများကို ပံ့ပိုးပေးရန်၊ မြန်မာနိုင်ငံ၏ စိုက်ပျိုးရေး ကွင်းဆက်ကို ပိုမိုခိုင်မာစေရန်၊ ပြည်တွင်းနှင့် ပြည်ပဈေးကွက်များတွင် အခွင့်အလမ်းများ တိုးချဲ့ရန်၊ ပိုမိုကောင်းမွန်သော လူမှုစီးပွားဘဝနှင့် ရေရှည်တည်တံ့သော စိုက်ပျိုးရေးဖွံ့ဖြိုးတိုးတက်မှုကို အထောက်အကူပြုရန်။",
+        "ကျွန်ုပ်တို့သည် ယုံကြည်စိတ်ချရမှုနှင့် အရည်အသွေးတို့ဖြင့် ဝယ်ယူသူတို့၏ စိတ်ကျေနပ်မှုကို အာမခံချက်ပေးရန် ကတိကဝတ်ပြုထားသကဲ့သို့ တောင်သူလယ်သမားများအတွက်လည်း ကျွမ်းကျင်သောလမ်းညွှန်မှုများ၊ တန်ဖိုးရှိသော အရင်းအမြစ်များနှင့် တရားမျှတသည့် ပူးပေါင်းဆောင်ရွက်မှုများဖြင့် အထောက်အပံ့ပေးလျက်ရှိသည်။ မြန်မာနိုင်ငံ၏ စိုက်ပျိုးရေး ထောက်ပံ့ပို့ဆောင်ရေးကွင်းဆက် (Agricultural Supply Chain) ကို ခိုင်မာအားကောင်းစေခြင်းအားဖြင့် ပြည်တွင်းနှင့် ပြည်ပဈေးကွက်များတွင် အခွင့်အလမ်းသစ်များ ဖန်တီးပေးရန်နှင့် တောင်သူတို့၏ လူမှုစီးပွားဘဝ မြှင့်တင်ရေးအပြင် စိုက်ပျိုးရေးကဏ္ဍ၏ ရေရှည်တည်တံ့သော ဖွံ့ဖြိုးတိုးတက်မှုကို အထောက်အကူပြုရန် ကျွန်ုပ်တို့ ရည်မှန်းထားပါသည်။",
       image: "/images/home/rice.png",
     },
     vision: {
@@ -128,7 +134,7 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       title: "ဘယ်ကို ဦးတည်",
       titleAccent: "သွားနေသလဲ",
       description:
-        "မြန်မာနိုင်ငံကို အရည်အသွေးမြင့် ဆန်၊ ပဲမျိုးစုံနှင့် မရှိမဖြစ်လိုအပ်သော စိုက်ပျိုးရေးထုတ်ကုန်များ၏ ယုံကြည်စိတ်ချရသော အရင်းအမြစ်တစ်ခုအဖြစ် ကမ္ဘာ့ဈေးကွက်တွင် နေရာရစေပြီး၊ စိုက်ပျိုးရေးအသိုင်းအဝိုင်း၏ ဘဝများကို မြှင့်တင်ပေးခြင်းဖြင့် ကမ္ဘာ့စားနပ်ရိက္ခာ ဖူလုံမှုကဏ္ဍတွင် ထိပ်တန်းမှ ပါဝင်ဆောင်ရွက်သူ ဖြစ်လာစေရန်။ အရည်အသွေး၊ ရေရှည်တည်တံ့မှုနှင့် သုံးစွဲသူ စိတ်ကျေနပ်မှုအပေါ် ထားရှိသော ကျွန်ုပ်တို့၏ ကတိကဝတ်များဖြင့် မြန်မာ့စိုက်ပျိုးရေးကဏ္ဍတွင် ကောင်းမွန်သော အပြောင်းအလဲများကို ဆောင်ကြဉ်းပေးနိုင်ရန် မျှော်မှန်းပါသည်။",
+        "မြန်မာနိုင်ငံကို အရည်အသွေးမြင့် ဆန်၊ ပဲမျိုးစုံနှင့် အခြေခံစားသောက်ကုန် စိုက်ပျိုးရေးထွက်ကုန်များ၏ ယုံကြည်စိတ်ချရသော အရင်းအမြစ်တစ်ခုအဖြစ် ကမ္ဘာ့ဈေးကွက်တွင် ရပ်တည်နိုင်စေရန်နှင့် ကမ္ဘာလုံးဆိုင်ရာ အစားအစာဖူလုံရေးကို အထောက်အကူပြုနိုင်ရန် ရည်ရွယ်ပါသည်။ တစ်ချိန်တည်းတွင် တောင်သူလယ်သမားများနှင့် ကျေးလက်လူမှုအသိုင်းအဝိုင်းများ၏ ဘဝအရည်အသွေးကို မြှင့်တင်ပေးရန်လည်း ကျွန်ုပ်တို့ အစဉ်ကြိုးပမ်းလျက်ရှိပါသည်။",
       image: "/images/home/black_matpae.png",
     },
     contact: {
@@ -136,9 +142,11 @@ export const homeData: { en: HomeSectionData; mm: HomeSectionData } = {
       titleAccent: "ဆွေးနွေးတိုင်ပင်ပါ",
       description:
         "ကျွန်ုပ်တို့၏ ထုတ်ကုန်များ၊ ဈေးနှုန်းများ သို့မဟုတ် အခြားမေးမြန်းလိုသည်များ ရှိပါက ကျွန်ုပ်တို့အဖွဲ့မှ အမြဲတမ်း အဆင်သင့် ဖြေကြားပေးပါမည်။",
-      email: "aungtakhon@gmail.com",
-      phone: "+95 9 123 456 789",
-      address: "ရန်ကုန်မြို့၊ မြန်မာနိုင်ငံ",
+      email: contactData.mm.info.email,
+      phone1: contactData.mm.info.phone1,
+      phone2: contactData.mm.info.phone2,
+      address1: "အမှတ် (၄၂)၊ ရွှေဘုံသာလမ်း",
+      address2: "ရန်ကုန်မြို့၊ မြန်မာနိုင်ငံ",
     },
   },
 };

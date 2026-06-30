@@ -8,18 +8,19 @@ export interface ContactPageData {
     title: string;
     titleAccent: string;
     description: string;
+    bgImage: string;
   };
   info: {
     title1: string;
     title2: string;
-    phone: string;
+    phone1: string;
+    phone2: string;
     email: string;
     addressLine1: string;
     addressLine2: string;
     facebookUrl: string;
   };
   map: {
-    title1: string;
     title2: string;
     description: string;
     addressLine1: string;
@@ -63,18 +64,20 @@ export const contactData: { en: ContactPageData; mm: ContactPageData } = {
       titleAccent: "Us",
       description:
         "Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+      bgImage: "/images/about/hero.jpg",
     },
     info: {
       ...address.en,
       title1: "Get in touch",
       title2: "Follow us",
-      phone: "+95 9 123 456 789",
-      email: "aungtakhon@gmail.com",
+      phone1: "09 779898900",
+      phone2: "09 766668090",
+      email: "aungtakhon675@gmail.com",
       facebookUrl: "https://facebook.com/yourpage",
     },
     map: {
       ...address.en,
-      title1: "Find Us",
+
       title2: "Visit our location",
       description:
         "We're conveniently located in the heart of Yangon. Come visit us during business hours.",
@@ -104,18 +107,19 @@ export const contactData: { en: ContactPageData; mm: ContactPageData } = {
       titleAccent: "ဆက်သွယ်ရန်",
       description:
         "မေးမြန်းလိုသည်များ ရှိပါသလား။ သင် သိရှိလိုသည်များကို စာတိုပေးပို့မေးမြန်းနိုင်ပြီး ကျွန်ုပ်တို့ဘက်မှ အမြန်ဆုံး ပြန်လည်ဖြေကြားပေးပါမည်။",
+      bgImage: "/images/about/hero.jpg",
     },
     info: {
       ...address.mm,
       title1: "အသေးစိတ် မေးမြန်းရန်",
       title2: "ကျွန်ုပ်တို့နှင့် လက်တွဲရန်",
-      phone: "+95 9 123 456 789",
-      email: "aungtakhon@gmail.com",
+      phone1: "၀၉ ၇၇၉၈၉၈၉၀၀",
+      phone2: "၀၉ ၇၆၆၆၆၈၀၉၀",
+      email: "aungtakhon675@gmail.com",
       facebookUrl: "https://facebook.com/yourpage",
     },
     map: {
       ...address.mm,
-      title1: "တည်နေရာ",
       title2: "ကျွန်ုပ်တို့ ရုံးခန်းသို့ လာရောက်လေ့လာပါ",
       description:
         "ကျွန်ုပ်တို့သည် ရန်ကုန်မြို့၏ ဗဟိုချက်မတွင် တည်ရှိပါသည်။ ရုံးဖွင့်ရက်များအတွင်း မည်သူမဆို လာရောက် ဆွေးနွေးနိုင်ပါသည်။",

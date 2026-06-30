@@ -37,9 +37,9 @@ export const aboutData: { en: AboutPageData; mm: AboutPageData } = {
       title: "Our",
       titleAccent: "Story",
       paragraphs: [
-        "Founded with a vision to transform Myanmar's agricultural landscape, Aung Takhon began as a small family-owned business with a big dream. Over the years, we have grown into a trusted wholesale center for premium quality paddy, black gram, and various agricultural products.",
-        "Our journey is built on strong relationships with local farmers across Myanmar. We work hand-in-hand with them, providing guidance, fair pricing, and reliable market access. This partnership ensures that only the finest quality grains reach our customers.",
-        "Today, Aung Takhon stands as a symbol of quality, integrity, and sustainability. We continue to expand our reach, connecting Myanmar's agricultural wealth to both local and international markets, while staying true to our roots and commitment to excellence.",
+        "Founded in Hinthada in 1992, Aung Ta Khon has over 30 years of experience in agricultural trading.",
+        "We specialize in rice, black matpe, green mung beans, and paddy, earning a reputation for quality, integrity, and reliability.",
+        "With a strong commitment to exceptional service, we strive to be a trusted and long-term partner for our customers.",
       ],
       images: {
         image1: "/images/about/bg.avif",

@@ -41,8 +41,8 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Menu - now only on large screens */}
+          <div className="hidden lg:flex items-center space-x-8">
             {currentNavData.links.map((link) => {
               const isContact = link.href === "/contact";
               const isActive = pathname === link.href;
@@ -117,7 +117,7 @@ export default function Navbar() {
           </div>
 
           {/* Right side - Language Toggle + Hamburger for mobile/tablet */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-3 lg:hidden">
             {/* Language Toggle - Mobile/Tablet */}
             <button
               onClick={() => setLang(lang === "en" ? "mm" : "en")}
@@ -185,9 +185,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - now shows on tablet too */}
       <div
-        className={`md:hidden bg-white/30 backdrop-blur-lg border-t border-white/20 py-4 px-4 flex flex-col space-y-3 items-center text-center transition-all duration-300 absolute left-0 right-0 top-16 z-[100] ${
+        className={`lg:hidden bg-white/30 backdrop-blur-lg border-t border-white/20 py-4 px-4 flex flex-col space-y-3 items-center text-center transition-all duration-300 absolute left-0 right-0 top-16 z-[100] ${
           isOpen ? "block" : "hidden"
         }`}
       >

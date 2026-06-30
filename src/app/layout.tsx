@@ -25,6 +25,9 @@ const notoMyanmar = Noto_Sans_Myanmar({
 export const metadata: Metadata = {
   title: "Aung Takhon",
   description: "Aung Takhon",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

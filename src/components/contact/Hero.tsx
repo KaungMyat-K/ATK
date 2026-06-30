@@ -1,4 +1,5 @@
 import { contactData, ContactPageData } from "@/constants/contact-data";
+import Image from "next/image";
 
 interface ContactHeroProps {
   hero: ContactPageData["hero"];
@@ -6,15 +7,30 @@ interface ContactHeroProps {
 
 export default function Hero({ hero }: ContactHeroProps) {
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-primary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">
+    <section className="relative min-h-[30vh] sm:min-h-[35vh] md:min-h-[20vh] lg:min-h-[25vh] xl:min-h-[45vh] flex items-center mb-8 sm:mb-12 md:mb-8 lg:mb-20">
+      {/* Background Image Container (Next.js Optimized Image) */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <Image
+          src={hero.bgImage}
+          alt="Products Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Dark Overlay Line */}
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      {/* Content Section */}
+      <div className="relative z-10 w-full py-8 sm:py-10 md:py-12 lg:py-14 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             {hero.title}{" "}
             <span className="text-primary">{hero.titleAccent}</span>
           </h1>
-          <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-secondary mx-auto"></div>
-          <p className="text-gray-600 mt-2 sm:mt-3 md:mt-4 max-w-xl sm:max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg">
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-secondary mx-auto"></div>
+          <p className="text-gray-200 mt-3 sm:mt-4 max-w-[90%] sm:max-w-2xl mx-auto text-sm sm:text-base">
             {hero.description}
           </p>
         </div>

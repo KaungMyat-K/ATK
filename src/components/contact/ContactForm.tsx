@@ -15,10 +15,10 @@ export default function ContactForm({ info, form }: ContactInfoProps) {
   return (
     <section className="bg-primary pb-12 sm:pb-16 md:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:gap-0 justify-center">
+        <div className="flex flex-col lg:flex-row lg:gap-0 justify-center">
           {/* LEFT SIDE: Contact Information Card  */}
-          <div className="md:w-1/3 lg:w-[32%] flex items-center">
-            <div className="bg-gray-100 rounded-2xl md:rounded-l-2xl md:rounded-r-none shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 border border-gray-100 w-full">
+          <div className="lg:w-[32%] flex items-center">
+            <div className="bg-gray-100 rounded-2xl lg:rounded-l-2xl lg:rounded-r-none shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 border border-gray-100 w-full">
               <div className="mb-6 sm:mb-8 md:mb-10">
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800">
                   {info.title1}
@@ -40,7 +40,10 @@ export default function ContactForm({ info, form }: ContactInfoProps) {
                   </div>
                   <div>
                     <p className="text-gray-800 text-base sm:text-lg font-medium">
-                      {info.phone}
+                      {info.phone1} ,
+                    </p>
+                    <p className="text-gray-800 text-base sm:text-lg font-medium">
+                      {info.phone2}
                     </p>
                   </div>
                 </div>
@@ -91,7 +94,7 @@ export default function ContactForm({ info, form }: ContactInfoProps) {
                       href={info.facebookUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-secondary  hover:text-secondary hover:scale-110 transition-all duration-300"
+                      className="text-secondary hover:text-secondary hover:scale-110 transition-all duration-300"
                     >
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6"
@@ -108,7 +111,7 @@ export default function ContactForm({ info, form }: ContactInfoProps) {
           </div>
 
           {/* RIGHT SIDE: Contact Form  */}
-          <div className="md:w-2/3 lg:w-[58%]">
+          <div className="lg:w-[58%]">
             <div className="bg-secondary rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-32 border border-gray-100 min-h-[450px] sm:min-h-[550px] md:min-h-[600px] lg:min-h-[650px] h-auto flex flex-col">
               <form
                 onSubmit={handleSubmit}
